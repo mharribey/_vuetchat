@@ -5,10 +5,15 @@
 </template>
 
 <script>
+
 export default {
   name: 'App'
 }
 </script>
+
+
+<!-- CSS -->
+
 
 <style>
 #app {
@@ -32,6 +37,7 @@ li {
 }
 a {
   color: #42b983;
+  text-decoration: none;
 }
 
 </style>
