@@ -1,26 +1,40 @@
 <template>
   <div class="Chat">
-    <h1>{{ msg }}</h1>
-    <router-link to="/">Home</router-link>
-    <ChatBox/>
+    <div class="ChatContent">
+      <UsersList/>
+      <ChatBox/>
+    </div>
   </div>
 </template>
 
 <script>
-  import ChatBox from './components/ChatBox'
+  import TheHeader from "./components/TheHeader"
+  import UsersList from "./components/UsersList"
+  import ChatBox from "./components/ChatBox"
+
 
   export default {
     name: 'Chat',
     data() {
       return {
-        msg: '_chat'
       }
     },
     methods: {
 
     },
     components: {
-      ChatBox
+      UsersList,
+      ChatBox,
+      TheHeader
     }
   }
 </script>
+
+<style scoped>
+  .Chat {
+  }
+  .ChatContent {
+    display: flex;
+    justify-content: flex-start;
+  }
+</style>

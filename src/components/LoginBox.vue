@@ -9,12 +9,11 @@
 
 
 <script>
-
-export default {
-  name: 'LoginBox',
-  data() {
-    return {
+  export default {
+    name: 'LoginBox',
+    data() {
+      return {
+      }
     }
   }
-}
 </script>
