@@ -19,16 +19,13 @@ export default {
     LoginBox
   },
   methods: {
-    // register: function(pseudo){
-    //   this.$api.userRegister({
-    //   }).then((user) => {
-    //     store.currentUser = user
-    //   })
-    // }
-     register: function(user){
-       store.currentUser = user
-       store.users.push({name: user, color:`rgb(${Math.floor(Math.random() * 255)},${Math.floor(Math.random() * 255)},${Math.floor(Math.random() * 255)})`})
-     }
+    register (username){
+      this.$api.userRegister(username).then((user) => {
+        store.currentUser = user
+        store.users.push({name: user, color:`rgb(${Math.floor(Math.random() * 255)},${Math.floor(Math.random() * 255)},${Math.floor(Math.random() * 255)})`})
+        this.$router.push('/chat');
+      })
+    }
   }
 }
 </script>

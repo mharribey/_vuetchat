@@ -2,7 +2,7 @@
   <div class="LoginBox">
     <p class="infos">Pour accéder à la chatroom, veuillez tout d'abord renseigner votre nom ou pseudo. Il sera visible par les autres dans le flux de discussion.</p>
     <p class="pseudo"><b>Nom ou pseudo</b></p>
-    <form @submit.prevent="onFormSubmit()">
+    <form @submit.prevent="onFormSubmit">
       <input type="text" name="" placeholder="15 caractères max." v-model="pseudo">
       <button type="submit" name="button">Valider</button>
     </form>
@@ -22,7 +22,6 @@
       onFormSubmit: function(){
         if(this.pseudo.length > 0){
           this.$emit("submit",this.pseudo)
-          this.$router.push('/chat');
         }else{
           alert("Veuillez renseigner un pseudo")
         }

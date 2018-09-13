@@ -2,7 +2,8 @@
   <div class="SendBox">
     <form @submit.prevent="sendMessage()">
       <input type="text" name="" placeholder="Ecrivez votre message ici..." v-model="message">
-      <button type="submit" name="button">send</button>
+      <button type="submit" name="button"><img src="../assets/send.svg"></button>
+      <!-- <img class="emoji" src="../assets/emoji.svg"> -->
     </form>
   </div>
 </template>
@@ -44,15 +45,30 @@
 
   input{
     width:90%;
-    min-height:3vh;
+    min-height:4vh;
     border:0;
     outline: none;
     border-radius: 5px;
     padding-left: 0.8em;
+    color:#717171;
+    font-size: 15px;
+  }
+  input::placeholder{
+    font-style: italic;
   }
 
   button {
-    transform: translateX(-46px);
+    transform: translateX(-40px);
+    border: 0;
+    background: transparent;
+  }
+
+  .emoji{
+    transform: translateX(-90px);
+  }
+
+  img {
+    width:17px;
   }
 
 </style>

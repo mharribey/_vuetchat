@@ -2,7 +2,7 @@
   <div class="UsersList">
     <p><b>Chatroom d'Inky</b></p>
     <div class="currentUser">
-      <p> {{ currentUser }} </p>
+      <p> {{ currentUser.username }} </p>
       <router-link to="/"><img class="disconnect" src="../assets/disconnect.svg"></router-link>
     </div>
     <p>Online users</p>

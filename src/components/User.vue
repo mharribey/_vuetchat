@@ -1,7 +1,7 @@
 <template>
   <div class="User">
     <div id="bulle" v-bind:style="{background: user.color}"></div>
-    <p>{{ user.name }}</p>
+    <p>{{ user.username }}</p>
   </div>
 </template>
 
