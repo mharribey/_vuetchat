@@ -29,7 +29,7 @@
 <style scoped>
 
   .SendBox{
-    min-height:2vh;
+    min-height:3vh;
     margin:0;
     margin-bottom:1em;
     border-radius: 5px;
@@ -44,7 +44,7 @@
 
   input{
     width:90%;
-    min-height:2vh;
+    min-height:3vh;
     border:0;
     outline: none;
     border-radius: 5px;

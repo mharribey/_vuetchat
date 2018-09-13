@@ -1,7 +1,7 @@
 <template>
   <div class="Message">
-    <h4>{{ author }}</h4>
-    <p>{{ message }}</p>
+    <h4>{{ message.author }}</h4>
+    <p>{{ message.message }}</p>
   </div>
 </template>
 
@@ -12,7 +12,7 @@
     name: 'Message',
     data() {
       return {
-        
+
       }
     },
     props:['message']

@@ -6,9 +6,9 @@
 </template>
 
 <script>
-  import TheHeader from "./components/TheHeader"
-  import UsersList from "./components/UsersList"
-  import ChatBox from "./components/ChatBox"
+import TheHeader from "./components/TheHeader"
+import UsersList from "./components/UsersList"
+import ChatBox from "./components/ChatBox"
 
 
   export default {

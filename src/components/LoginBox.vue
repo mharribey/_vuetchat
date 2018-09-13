@@ -57,7 +57,7 @@
     background: rgb(233,237,239);
     border:0;
     outline:none;
-    height:2vh;
+    height:3vh;
     border-radius: 5px;
     margin:1em 40px 0;
     padding-left: 0.8em;

@@ -15,12 +15,13 @@
     name: 'MessagesList',
     data() {
       return {
-        
+
       }
     },
     methods:{
       updateMessage: function(message){
         store.messages.push(message)
+        // this.$api.messageSend(message)
       }
     },
     computed: {
