@@ -41,5 +41,9 @@ export default {
     color: #42b983;
     text-decoration: none;
   }
+  button {
+    outline: none;
+    cursor: pointer;
+  }
 
 </style>

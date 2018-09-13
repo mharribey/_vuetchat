@@ -9,21 +9,22 @@
 <script>
   import Message from "./Message"
   import SendBox from "./SendBox"
+  import store from "../store"
 
   export default {
     name: 'MessagesList',
     data() {
       return {
-        messages:[
-          "hey",
-          "heeeey"
-        ]
+        
       }
     },
     methods:{
       updateMessage: function(message){
-        this.messages.push(message)
+        store.messages.push(message)
       }
+    },
+    computed: {
+      messages: () => store.messages
     },
     components:{
       Message,
@@ -38,12 +39,12 @@
     box-sizing: border-box;
     height:100vh;
     padding-left: 2em;
-    padding-right: 35vw;
+    padding-right: 30vw;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     align-items: flex-start;
-    background: lightgrey;
+    background-color: rgb(233,237,239);
   }
 
 </style>

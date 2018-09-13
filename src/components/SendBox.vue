@@ -1,7 +1,7 @@
 <template>
   <div class="SendBox">
     <form v-on:submit.prevent="$emit('sent',message)">
-      <input type="text" name="" v-model="message">
+      <input type="text" name="" placeholder="Ecrivez votre message ici..." v-model="message">
       <button type="submit" name="button">send</button>
     </form>
   </div>
@@ -23,23 +23,30 @@
 <style scoped>
 
   .SendBox{
-    height:5vh;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    margin:1em;
-    margin-left: 0;
-    padding:0.5em 1em;
-    background-color: white;
+    min-height:2vh;
+    margin:0;
+    margin-bottom:1em;
     border-radius: 5px;
     width:100%;
   }
   form {
     width:100%;
-    margin-right: 1em;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
   }
+
   input{
-    width:80%;
+    width:90%;
+    min-height:2vh;
+    border:0;
+    outline: none;
+    border-radius: 5px;
+    padding-left: 0.8em;
+  }
+
+  button {
+    transform: translateX(-46px);
   }
 
 </style>

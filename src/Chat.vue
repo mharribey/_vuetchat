@@ -1,9 +1,7 @@
 <template>
   <div class="Chat">
-    <div class="ChatContent">
-      <UsersList/>
-      <ChatBox/>
-    </div>
+    <UsersList/>
+    <ChatBox/>
   </div>
 </template>
 
@@ -32,9 +30,8 @@
 
 <style scoped>
   .Chat {
-  }
-  .ChatContent {
     display: flex;
     justify-content: flex-start;
   }
+
 </style>

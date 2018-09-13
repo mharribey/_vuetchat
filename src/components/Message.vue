@@ -1,15 +1,18 @@
 <template>
   <div class="Message">
-    <h4>{{ message }}</h4>
+    <h4>{{ author }}</h4>
+    <p>{{ message }}</p>
   </div>
 </template>
 
 
 <script>
+
   export default {
     name: 'Message',
     data() {
       return {
+        
       }
     },
     props:['message']
@@ -21,5 +24,9 @@
   .Message {
     display: flex;
     align-items: flex-start;
+  }
+
+  h4{
+    margin-bottom: 0;
   }
 </style>
