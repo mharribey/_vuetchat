@@ -5,7 +5,6 @@
     <form @submit.prevent="onFormSubmit()">
       <input type="text" name="" placeholder="15 caractères max." v-model="pseudo">
       <button type="submit" name="button">Valider</button>
-      <router-link @click :to="{ name: '', params: {} }"></router-link>
     </form>
   </div>
 </template>

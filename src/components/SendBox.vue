@@ -1,6 +1,6 @@
 <template>
   <div class="SendBox">
-    <form v-on:submit.prevent="$emit('sent',message)">
+    <form @submit.prevent="sendMessage()">
       <input type="text" name="" placeholder="Ecrivez votre message ici..." v-model="message">
       <button type="submit" name="button">send</button>
     </form>
@@ -15,6 +15,12 @@
     data() {
       return {
         message: ""
+      }
+    },
+    methods: {
+      sendMessage: function(){
+        this.$emit('sent',this.message)
+        document.querySelector('input').value = ""
       }
     }
   }

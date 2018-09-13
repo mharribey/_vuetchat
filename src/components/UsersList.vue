@@ -1,6 +1,7 @@
 <template>
   <div class="UsersList">
-    <h4>Bienvenue {{ currentUser }}</h4>
+    <p><b>Bienvenue {{ currentUser }}</b></p>
+    <p> {{ currentUser }} </p>
     <User v-for="user in users" :user="user"/>
     <hr/>
     <router-link to="/">déconnexion</router-link>
