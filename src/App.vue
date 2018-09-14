@@ -17,6 +17,9 @@ export default {
 
 
 <style>
+  *::-webkit-scrollbar {
+    display: none;
+  }
   html, body{
     margin:0;
     overflow: hidden;

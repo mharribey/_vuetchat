@@ -81,27 +81,27 @@
 
   .tache {
     position: absolute;
-    width:30%;
+    width:45vw;
     z-index:9999;
   }
   #ta1 {
-    top:300px;
-    left:400px;
+    top:10vh;
+    left:30vw;
   }
 
   #ta2 {
-    top:-50px;
-    left:500px;
+    top:0vh;
+    left:20vw;
   }
 
   #ta3 {
-    top:200px;
-    left:1000px;
+    top:40vh;
+    left:60vw;
   }
 
   #ta4 {
-    top: 200px;
-    left: 400px;
+    top: 20vh;
+    left: 20vw;
   }
 
   .fadeOut {
