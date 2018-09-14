@@ -3,12 +3,13 @@
     <p><b>Chatroom d'Inky</b></p>
     <div class="currentUser">
       <p> {{ currentUser.username }} </p>
-      <router-link to="/"><img class="disconnect" src="../assets/disconnect.svg"></router-link>
+      <img class="disconnect" src="../assets/disconnect.svg" @click="disconnected">
     </div>
     <p>Online users</p>
     <User v-for="user in users" :user="user"/>
   </div>
 </template>
+
 
 
 <script>
@@ -20,6 +21,11 @@
     data() {
       return {
 
+      }
+    },
+    methods:{
+      disconnected: function(){
+        this.$router.push("/")
       }
     },
     components:{

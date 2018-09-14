@@ -19,6 +19,7 @@ export default {
 <style>
   html, body{
     margin:0;
+    overflow: hidden;
   }
   #app {
     font-family: 'Avenir', Helvetica, Arial, sans-serif;
@@ -46,5 +47,24 @@ export default {
     outline: none;
     cursor: pointer;
   }
+
+  .display {
+    display: none;
+  }
+  .poulpe {
+    position: absolute;
+    width:300px;
+  }
+
+  @keyframes ink{
+    0%{
+      transform:translateY(0);
+    }50%{
+      transform:translateY(20px);
+    }100%{
+      transform:translateY(0);
+    }
+  }
+
 
 </style>

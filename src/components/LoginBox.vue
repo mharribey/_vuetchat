@@ -37,9 +37,10 @@
     border-radius: 10px;
     padding:1em;
     width: 400px;
-    margin: auto;
+    /*margin: auto;*/
     display: flex;
     flex-direction: column;
+    transform: translateX(-130px);
   }
 
   .infos {

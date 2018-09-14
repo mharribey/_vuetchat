@@ -3,19 +3,17 @@
     <form @submit.prevent="sendMessage()">
       <input type="text" name="" placeholder="Ecrivez votre message ici..." v-model="message">
       <button type="submit" name="button"><img src="../assets/send.svg"></button>
-      <!-- <img class="emoji" src="../assets/emoji.svg"> -->
     </form>
   </div>
 </template>
 
 
 <script>
-
   export default {
     name: 'SendBox',
     data() {
       return {
-        message: ""
+        message: ''
       }
     },
     methods: {

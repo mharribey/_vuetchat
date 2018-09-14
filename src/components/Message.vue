@@ -2,7 +2,7 @@
   <div class="Message">
     <div class="infos">
       <p class="author" v-bind:style = ""> {{ message.user.username }}</p>
-      <p class="date">{{ message.date }}</p>
+      <p class="date">{{ message.created }}</p>
 
     </div>
     <p class="message">{{ message.text }}</p>
@@ -16,11 +16,12 @@
     name: 'Message',
     data() {
       return {
-        red:"red"
+
       }
     },
     computed:{
       users:()=> store.users
+
       // getColor:()=>{
       //   for(let i = 0 ; i < this.users.count ; i++) {
       //     if(this.users[i] == message.author){
@@ -43,6 +44,7 @@
     align-items: flex-start;
     font-size: 15px;
     height:100%;
+    text-align: left;
   }
 
   p {

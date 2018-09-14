@@ -23,12 +23,10 @@
     name: 'MessagesList',
     data() {
       return {
-        connectedUsers: store.users
       }
     },
     methods:{
       updateMessage: function(message){
-        console.log(store.users)
         let d = new Date()
         let h = d.getHours()
         let m = d.getMinutes()
@@ -50,7 +48,8 @@
       }
     },
     computed: {
-      messages: () => store.messages
+      messages: () => store.messages,
+      connectedUsers: () => store.users
     },
     components:{
       Message,
@@ -83,7 +82,7 @@
   }
 
   .messageContainer{
-    height:10vh;
+    min-height:10vh;
   }
 
   .channel {

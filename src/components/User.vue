@@ -37,6 +37,7 @@
     margin:0;
     margin-right:7px;
     border-radius: 50%;
+    background: grey;
   }
 
   p {
