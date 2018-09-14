@@ -33,6 +33,7 @@
     margin-bottom:1em;
     border-radius: 5px;
     width:100%;
+    z-index: 99;
   }
   form {
     width:100%;

@@ -13,8 +13,16 @@ const store = new Vue({
       })
 
       this.$api.onUsersUpdate(({type, user, users}) => {
-        console.log(`${user.username} just ${type} the room`)
-        store.users = users
+        let myUser = {username: user.username,avatar:null,color:randomizeColor()}
+        let myUsers = []
+
+        users.forEach((el)=>{
+          el = { username: el.username,avatar:null,color:randomizeColor()}
+          myUsers.push(el)
+        })
+
+        console.log(`${myUser.username} just ${type} the room`)
+        store.users = myUsers
       })
 
       this.$api.onError((data)=> {
@@ -23,5 +31,9 @@ const store = new Vue({
     })
   }
 })
+
+function randomizeColor(){
+  return "rgb(" + Math.floor(Math.random() * Math.floor(255)) + "," + Math.floor(Math.random() * Math.floor(255)) + "," + Math.floor(Math.random() * Math.floor(255)) + ")"
+}
 
 export default store

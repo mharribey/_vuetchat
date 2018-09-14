@@ -2,11 +2,13 @@
   <div class="UsersList">
     <p><b>Chatroom d'Inky</b></p>
     <div class="currentUser">
-      <p> {{ currentUser.username }} </p>
+      <p style="font-size:15px"> {{ currentUser.username }} </p>
       <img class="disconnect" src="../assets/disconnect.svg" @click="disconnected">
     </div>
     <p>Online users</p>
-    <User v-for="user in users" :user="user"/>
+    <div class="allUsers">
+      <User v-for="user in users" :user="user"/>
+    </div>
   </div>
 </template>
 
@@ -49,13 +51,20 @@
     padding-left: 1em;
   }
 
+  .allUsers {
+    height:60vh;
+    overflow: scroll;
+    box-sizing: border-box;
+    border-bottom: 1px solid rgba(0,0,0,0.1)
+  }
+
   .currentUser{
     display: flex;
     align-items: center;
     justify-content: space-between;
     border-radius:50px;
     background-image: linear-gradient(68deg, #a940ff, #7940ff);
-    padding:4px 10px 0px 8px;
+    padding:4px 10px 4px 3px;
     transform: translateX(-2em);
     color:white;
     margin-bottom: 1em;

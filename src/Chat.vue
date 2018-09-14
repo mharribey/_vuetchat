@@ -48,7 +48,7 @@
           document.getElementById("inkyLeave").src = ""
           document.getElementById("inky").classList.toggle("leaveAnim")
           this.displayInk()
-
+          document.getElementById("inky").classList.toggle("inkAnim")
         },3000)
       },
       displayInk:function(){
@@ -57,6 +57,7 @@
           el.classList.toggle("fadeOut")
           setTimeout(()=>{
             el.classList.toggle("display")
+            el.classList.toggle("fadeOut")
           },5000)
         })
 
@@ -162,7 +163,7 @@
     0%{
       transform: translateY(0);
       opacity: 1;
-    70%{
+    80%{
       opacity: 1;
     }
     }100%{

@@ -6,6 +6,7 @@
     </div>
     <div id="scroll">
       <div class="messageContainer">
+        <p class="recent"> - Il n'y a pas de messages plus récent - </p>
         <Message v-for="message in messages" :message="message"/>
       </div>
     </div>
@@ -68,7 +69,7 @@
     display: flex;
     flex-direction: column;
 
-    background-color: rgb(233,237,239);
+    background-image: url("../assets/Fond.jpg");
   }
 
   #scroll {
@@ -79,6 +80,17 @@
     flex-direction: column;
     justify-content: flex-end;
     align-items: flex-start;
+  }
+
+  .back {
+    width:100%;
+    height:100%;
+    z-index:2;
+  }
+
+  .recent {
+    color:#717171;
+    margin-bottom: 2em;
   }
 
   .messageContainer{

@@ -1,9 +1,10 @@
 <template>
   <div class="Message">
-    <div class="infos">
-      <p class="author" v-bind:style = ""> {{ message.user.username }}</p>
-      <p class="date">{{ message.created }}</p>
+    {{ color }}
 
+    <div class="infos">
+      <p class="author" :style="color"> {{ message.user.username }}</p>
+      <p class="date">{{ message.created.slice(11,16) }}</p>
     </div>
     <p class="message">{{ message.text }}</p>
   </div>
@@ -16,22 +17,23 @@
     name: 'Message',
     data() {
       return {
-
+        color:this.getColor
       }
     },
     computed:{
-      users:()=> store.users
-
-      // getColor:()=>{
-      //   for(let i = 0 ; i < this.users.count ; i++) {
-      //     if(this.users[i] == message.author){
-      //       return this.users[i].color
-      //     }
-      //   }
-      // }
+      users:()=> store.users,
+      getColor:()=>{
+        for(let i = 0 ; i < this.users.count ; i++) {
+          if(this.users[i].username == this.message.user.username){
+            return this.users[i].color
+          }
+        }
+      }
     },
     props:['message']
   }
+
+
 
 
 </script>
@@ -45,14 +47,18 @@
     font-size: 15px;
     height:100%;
     text-align: left;
+    z-index: 99;
   }
 
   p {
     margin:0;
+    font-size: 15px;
   }
 
   .infos {
     display: flex;
+    width:12vw;
+    justify-content: space-between;
   }
 
   .author {

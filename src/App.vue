@@ -20,6 +20,11 @@ export default {
   html, body{
     margin:0;
     overflow: hidden;
+    font-family: 'Source Sans Pro', 'Open Sans', sans-serif;
+    color:#333;
+  }
+  p {
+    font-size: 14px;
   }
   #app {
     font-family: 'Avenir', Helvetica, Arial, sans-serif;
