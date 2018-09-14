@@ -70,4 +70,8 @@
     width:17px;
   }
 
+  img:hover path {
+    stroke: #333;
+  }
+
 </style>

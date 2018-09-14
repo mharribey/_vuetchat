@@ -82,7 +82,7 @@
   .tache {
     position: absolute;
     width:600px;
-    z-index:0;
+    z-index:9999;
   }
   #ta1 {
     top:300px;

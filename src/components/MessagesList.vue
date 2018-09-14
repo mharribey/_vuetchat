@@ -68,7 +68,6 @@
     padding-right: 30vw;
     display: flex;
     flex-direction: column;
-
     background-image: url("../assets/Fond.jpg");
   }
 

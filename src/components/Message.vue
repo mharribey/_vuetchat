@@ -1,9 +1,7 @@
 <template>
   <div class="Message">
-    {{ color }}
-
     <div class="infos">
-      <p class="author" :style="color"> {{ message.user.username }}</p>
+      <p class="author" :style="{color: color}"> {{ message.user.username || '' }}</p>
       <p class="date">{{ message.created.slice(11,16) }}</p>
     </div>
     <p class="message">{{ message.text }}</p>
@@ -12,25 +10,21 @@
 
 
 <script>
+  import store from '../store'
 
   export default {
     name: 'Message',
-    data() {
-      return {
-        color:this.getColor
-      }
-    },
+    props:['message'],
     computed:{
-      users:()=> store.users,
-      getColor:()=>{
-        for(let i = 0 ; i < this.users.count ; i++) {
-          if(this.users[i].username == this.message.user.username){
-            return this.users[i].color
-          }
-        }
+      users () {
+        return store.users
+      },
+      color () {
+        let messageUser = this.message.user
+        const user = store.users.find(user => user.username == messageUser.username)
+        return user && user.color
       }
     },
-    props:['message']
   }
 
 
