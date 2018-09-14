@@ -1,4 +1,5 @@
 import Vue from 'vue'
+import emitter from '@/emitter'
 
 const store = new Vue({
   data: {
@@ -11,16 +12,24 @@ const store = new Vue({
       this.$api.onMessage((data) => {
         store.messages.push(data.message)
       })
-      
+
+      this.$api.onCommand((data) =>{
+        if(data.message.text == "/ink"){
+          emitter.emit('poulpe')
+        }
+      })
 
       this.$api.onUsersUpdate(({type, user, users}) => {
         let myUser = {username: user.username,avatar:null,color:randomizeColor()}
         let myUsers = []
 
-        users.forEach((el)=>{
-          el = { username: el.username,avatar:null,color:randomizeColor()}
-          myUsers.push(el)
-        })
+        if(store.users.length == 0){
+          users.forEach((el)=>{
+            el = { username: el.username,avatar:null,color:randomizeColor()}
+            myUsers.push(el)
+          })
+        }
+
 
         console.log(`${myUser.username} just ${type} the room`)
         store.users = myUsers

@@ -40,6 +40,10 @@ const api = {
 
   onError (cb) {
     socket.on('chat error', cb)
+  },
+
+  onCommand (cb) {
+    socket.on('command new', cb)
   }
 }
 

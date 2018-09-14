@@ -27,6 +27,7 @@
     },
     methods:{
       disconnected: function(){
+        
         this.$router.push("/")
       }
     },

@@ -46,6 +46,7 @@
         },50)
 
         this.$api.messageSend(message)
+
       }
     },
     computed: {

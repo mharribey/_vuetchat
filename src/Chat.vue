@@ -3,7 +3,7 @@
     <UsersList/>
     <ChatBox/>
     <img id="splash" src="./assets/taches/ta0.svg">
-    <img id="inky" class="poulpe inkAnim" src="./assets/01_Animation_Base.gif" @click="poulpe">
+    <img id="inky" class="poulpe inkAnim" src="./assets/01_Animation_Base.gif" @mouseover="help" @mouseleave="help">
     <img id="inkyLeave" class="display" src="./assets/01_Animation_Sortie.gif">
 
     <div id="popin" class="display">
@@ -23,12 +23,16 @@
   import TheHeader from "./components/TheHeader"
   import UsersList from "./components/UsersList"
   import ChatBox from "./components/ChatBox"
+  import emitter from '@/emitter'
 
   export default {
     name: 'Chat',
     data() {
       return {
       }
+    },
+    mounted() {
+      emitter.on('poulpe', this.poulpe)
     },
     methods: {
       help: function(){
@@ -46,10 +50,14 @@
         setTimeout(()=>{
           document.getElementById("inkyLeave").classList.toggle("display")
           document.getElementById("inkyLeave").src = ""
-          document.getElementById("inky").classList.toggle("leaveAnim")
-          this.displayInk()
           document.getElementById("inky").classList.toggle("inkAnim")
         },3000)
+
+        setTimeout(()=>{
+          this.displayInk()
+          document.getElementById("inky").classList.toggle("leaveAnim")
+        },4000)
+
       },
       displayInk:function(){
         document.querySelectorAll(".tache").forEach(function(el){
@@ -58,7 +66,7 @@
           setTimeout(()=>{
             el.classList.toggle("display")
             el.classList.toggle("fadeOut")
-          },5000)
+          },6000)
         })
 
       }
@@ -139,7 +147,7 @@
     animation: ink 1.5s ease-in-out infinite;
   }
   .leaveAnim {
-    animation: inkOut 1.2s ease-in forwards;
+    animation: inkOut 5s forwards;
   }
 
 
@@ -153,9 +161,17 @@
 
   @keyframes inkOut{
     0%{
-      transform: translateY(0px);
+      transform: translate3d(0,0,0);
+    }20%{
+      transform: translate3d(0,40vh,0);
+    }60%{
+      transform: translate3d(-40vw,40vh,0);
+    }80%{
+      transform: translate3d(-40vw,-40vh,0);
     }100%{
-      transform: translateY(500px);
+      transform: translate3d(0,0,0);
+    }100%{
+      transform: translate3d(-40vw,40vh,0);
     }
   }
 

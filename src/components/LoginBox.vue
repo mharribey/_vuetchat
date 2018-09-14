@@ -73,12 +73,19 @@
   button {
     width:fit-content;
     margin:2em auto 1em;
-    background: rgb(115,67,167);
+    background: #a940ff;
     color:white;
     border:0;
     border-radius: 10px;
     font-size: 1em;
     padding:5px 40px;
+    transition:0.2s;
+  }
+  button:hover{
+    background: #7314c1;
+  }
+  button:active{
+    background: #c28ded;
   }
 
   a{
