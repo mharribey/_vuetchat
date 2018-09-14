@@ -2,6 +2,7 @@
   <div class="User">
     <div id="bulle" v-bind:style="{background: user.color}"></div>
     <p><b>{{ user.username }}</b></p>
+    
   </div>
 </template>
 

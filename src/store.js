@@ -11,6 +11,7 @@ const store = new Vue({
       this.$api.onMessage((data) => {
         store.messages.push(data.message)
       })
+      
 
       this.$api.onUsersUpdate(({type, user, users}) => {
         let myUser = {username: user.username,avatar:null,color:randomizeColor()}
